@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Générateur de QR Code Badge</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+<style>
+body {font-family: Arial; background:#f4f4f4; padding:30px;}
+.card {max-width:360px; margin:auto; background:white; padding:25px; border-radius:12px;}
+input, button {width:100%; padding:10px; margin-top:10px;}
+button {background:#007BFF; color:white; border:none; font-weight:bold;}
+#qrcode {margin-top:20px; text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>Générateur de badge</h2>
+<input id="name" placeholder="Nom et Prénom">
+<input id="img" placeholder="URL de l’image du badge">
+<button onclick="generate()">Générer QR Code</button>
+<div id="qrcode"></div>
+</div>
+
+<script>
+function generate() {
+ const name = encodeURIComponent(document.getElementById("name").value.trim());
+ const img = encodeURIComponent(document.getElementById("img").value.trim());
+ if (!name || !img) return alert("Remplis tous les champs");
+ const url = https://karl12062002.github.io/badge/view.html?name=${name}&img=${img};
+ document.getElementById("qrcode").innerHTML="";
+ new QRCode(document.getElementById("qrcode"), {text:url,width:200,height:200});
+}
+</script>
+
+</body>
+</html>
