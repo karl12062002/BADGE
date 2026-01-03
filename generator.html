@@ -27,7 +27,7 @@ function generate() {
  const name = encodeURIComponent(document.getElementById("name").value.trim());
  const img = encodeURIComponent(document.getElementById("img").value.trim());
  if (!name || !img) return alert("Remplis tous les champs");
- const url = https://karl12062002.github.io/badge/view.html?name=${name}&img=${img};
+ const url = https://karlobame.github.io/badge/view.html?name=${name}&img=${img};
  document.getElementById("qrcode").innerHTML="";
  new QRCode(document.getElementById("qrcode"), {text:url,width:200,height:200});
 }
